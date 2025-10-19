@@ -2,6 +2,7 @@ import "./Sidebar.css";
 import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext";
 import { v4 as uuidv4 } from "uuid";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function Sidebar() {
   let {
@@ -22,7 +23,7 @@ export default function Sidebar() {
 
   const getAllThreads = async () => {
     try {
-      let response = await fetch(`${import.meta.env.VITE_API_URL}/api/thread`);
+      let response = await fetch(`${API_URL}/api/thread`);
       let res = await response.json();
       let filterData = res.map((thread) => ({
         threadId: thread.threadId,
@@ -49,9 +50,7 @@ export default function Sidebar() {
 
   let changeThread = async (newThreadId) => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/thread/${newThreadId}`
-      );
+      const response = await fetch(`${API_URL}/api/thread/${newThreadId}`);
       const res = await response.json();
       setPrevChats(res);
       setNewChat(false);
@@ -62,10 +61,9 @@ export default function Sidebar() {
   };
   let deleteThread = async (threadId) => {
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}api/thread/${threadId}`,
-        { method: "DELETE" }
-      );
+      const response = await fetch(`${API_URL}api/thread/${threadId}`, {
+        method: "DELETE",
+      });
       const res = await response.json();
       console.log(res);
 

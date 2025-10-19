@@ -3,6 +3,7 @@ import Chat from "./Chat.jsx";
 import { MyContext } from "./MyContext.jsx";
 import { useContext, useState, useEffect } from "react";
 import { BeatLoader } from "react-spinners";
+const API_URL = import.meta.env.VITE_API_URL;
 
 export default function ChatWindow() {
   const {
@@ -33,10 +34,7 @@ export default function ChatWindow() {
       }),
     };
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/chat`,
-        options
-      );
+      const response = await fetch(`${API_URL}/api/chat`, options);
       let res = await response.json();
       console.log(res.reply);
       setReply(res.reply);
