@@ -147,7 +147,7 @@ button:hover {
 .sidebar.collapsed .history-item,
 .sidebar.collapsed .thread-title,
 .sidebar.collapsed .delete-icon,
-.fa-pen-to-square,
+.fa-edit .fa-pen-to-square,
 .sidebar.collapsed p {
   display: none;
 }
