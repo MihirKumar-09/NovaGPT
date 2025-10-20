@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { MyContext } from "./MyContext";
 import { v4 as uuidv4 } from "uuid";
 const API_URL = import.meta.env.VITE_API_URL;
+import logo from "./assets/logo.png";
 
 export default function Sidebar() {
   let {
@@ -61,7 +62,7 @@ export default function Sidebar() {
   };
   let deleteThread = async (threadId) => {
     try {
-      const response = await fetch(`${API_URL}api/thread/${threadId}`, {
+      const response = await fetch(`${API_URL}/api/thread/${threadId}`, {
         method: "DELETE",
       });
       const res = await response.json();
@@ -79,7 +80,7 @@ export default function Sidebar() {
     <section className={`sidebar ${isCollapes ? "collapsed" : ""}`}>
       {/* New chat button */}
       <button onClick={createNewChat} title="Create New Chat">
-        <img src="src/assets/logo.png" alt="gpt logo" className="logo" />
+        <img src={logo} alt="gpt logo" className="logo" />
         <i className="fa-solid fa-edit"></i>
       </button>
 

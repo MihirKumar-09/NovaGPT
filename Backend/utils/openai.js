@@ -23,7 +23,11 @@ const getOpenAIAPIResponse = async (message) => {
       options
     );
     const data = await response.json();
-    return data.choices[0].message.content;
+    if (data.choices && data.choices.length > 0) {
+      return data.choices[0].message.content;
+    } else {
+      throw new Error("No response from OpenAI API");
+    }
   } catch (err) {
     console.log(err);
   }
