@@ -1,14 +1,14 @@
-🚀 NovaGPT — Free & Open-Source AI API
+# 🚀 NovaGPT — Free & Open-Source AI API
 
 NovaGPT is a free, open-source AI API designed for developers who want powerful language capabilities without complexity or paywalls.
 It’s lightweight, fast, and easy to integrate into any project ⚡
 
-🔓 No Authentication (For Now)
+# 🔓 No Authentication (For Now)
 
 Currently, NovaGPT requires no authentication — just hit the endpoint and start building instantly.
 ( Auth tokens & rate-limits will be added in future updates 🔐 )
 
-🌟 Key Features
+# 🌟 Key Features
 
 ⚡ Free & open-source API
 
